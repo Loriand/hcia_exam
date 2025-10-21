@@ -1,0 +1,4626 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HCIA Cloud Service V3.5 Exam Simulator</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .bg-gradient-to-br {
+            background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
+        }
+        .from-blue-50 {
+            --tw-gradient-from: #eff6ff;
+            --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(239, 246, 255, 0));
+        }
+        .to-indigo-100 {
+            --tw-gradient-to: #e0e7ff;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+<div id="app"></div>
+<script>
+        const examQuestions = [
+    {
+        "id": 1,
+        "text": "Concept and Value of Cloud Services, Ecosystem, and Architecture",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": []
+    },
+    {
+        "id": 2,
+        "text": "1. An Availability Zone (AZ) is a collection of one or more physical data centers. It has independent power, cooling, water, and electricity. Computing, network, and storage resources are divided into multiple clusters.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 3,
+        "text": "2. Which of the LEADS concepts is incorrect?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "L: Laboratory as a Service"
+            },
+            {
+                "letter": "B",
+                "text": "E: End to End"
+            },
+            {
+                "letter": "C",
+                "text": "A: Agile"
+            },
+            {
+                "letter": "D",
+                "text": "D: Dedicated"
+            },
+            {
+                "letter": "E",
+                "text": "S: Service"
+            }
+        ],
+        "correctAnswer": [
+            "E"
+        ]
+    },
+    {
+        "id": 4,
+        "text": "3. How are regions divided?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Dimensions of geographic location and network latency"
+            },
+            {
+                "letter": "B",
+                "text": "Cluster server"
+            },
+            {
+                "letter": "C",
+                "text": "Available (AZ)"
+            }
+        ],
+        "correctAnswer": [
+            "A"
+        ]
+    },
+    {
+        "id": 5,
+        "text": "4. Cloud computing is a model that allows obtaining the necessary resources (such as computing, storage, network, applications, and services) from a configurable resource pool at any time and place, conveniently and on demand. Resources can be provisioned and released quickly, minimizing the workload of managing resources and interaction with cloud service providers.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 6,
+        "text": "5. Which of the following statements about hybrid cloud is incorrect?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Unified management of enterprise resources in public and private clouds"
+            },
+            {
+                "letter": "B",
+                "text": "Allows service resources to flow between public and private clouds"
+            },
+            {
+                "letter": "C",
+                "text": "Optimal provisioning through the hybrid cloud"
+            },
+            {
+                "letter": "D",
+                "text": "Applications can only be deployed in the public cloud"
+            }
+        ],
+        "correctAnswer": [
+            "D"
+        ]
+    },
+    {
+        "id": 7,
+        "text": "6. What are the deployment modes of cloud computing? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Private cloud"
+            },
+            {
+                "letter": "B",
+                "text": "Public cloud"
+            },
+            {
+                "letter": "C",
+                "text": "Hybrid cloud"
+            },
+            {
+                "letter": "D",
+                "text": "Community cloud/industry cloud"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ]
+    },
+    {
+        "id": 8,
+        "text": "7. Which cloud service level corresponds to the service that provides the application runtime and development environment?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "IaaS"
+            },
+            {
+                "letter": "B",
+                "text": "PaaS"
+            },
+            {
+                "letter": "C",
+                "text": "SaaS"
+            }
+        ],
+        "correctAnswer": [
+            "B"
+        ]
+    },
+    {
+        "id": 9,
+        "text": "8. Which of the following statements about the positioning of HUAWEI CLOUD services is correct?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Focus on the I layer, enable the P layer, and enhance the S layer"
+            },
+            {
+                "letter": "B",
+                "text": "Focus on the S layer, enable the P layer, and enhance the I layer"
+            },
+            {
+                "letter": "C",
+                "text": "Focus on the P layer, enable the I layer, and enhance the S layer"
+            },
+            {
+                "letter": "D",
+                "text": "Focus on the I layer, enable the S layer, and enhance the P layer"
+            }
+        ],
+        "correctAnswer": [
+            "A"
+        ]
+    },
+    {
+        "id": 10,
+        "text": "9. Which of the following constitute Huawei’s public cloud ecosystem? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Application Supermarket"
+            },
+            {
+                "letter": "B",
+                "text": "Developer Community"
+            },
+            {
+                "letter": "C",
+                "text": "Partners"
+            },
+            {
+                "letter": "D",
+                "text": "Huawei Certified Cloud Service Engineers"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ]
+    },
+    {
+        "id": 11,
+        "text": "10. Huawei’s capability openness will help developers integrate Huawei’s open product capabilities with upper-layer applications to create differentiated and innovative solutions.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 12,
+        "text": "11. Which of the following is not a capability of DevCloud?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Project management"
+            },
+            {
+                "letter": "B",
+                "text": "Code checking"
+            },
+            {
+                "letter": "C",
+                "text": "Compilation and building"
+            },
+            {
+                "letter": "D",
+                "text": "Data backup"
+            }
+        ],
+        "correctAnswer": [
+            "D"
+        ]
+    },
+    {
+        "id": 13,
+        "text": "12. Which of the following components does not belong to the big data platform?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "MapReduce"
+            },
+            {
+                "letter": "B",
+                "text": "OpenStack"
+            },
+            {
+                "letter": "C",
+                "text": "HDFS"
+            },
+            {
+                "letter": "D",
+                "text": "Yarn"
+            }
+        ],
+        "correctAnswer": [
+            "B"
+        ]
+    },
+    {
+        "id": 14,
+        "text": "13. What applications and services does HUAWEI CLOUD provide? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Core software"
+            },
+            {
+                "letter": "B",
+                "text": "Commercial software"
+            },
+            {
+                "letter": "C",
+                "text": "Developer tools"
+            },
+            {
+                "letter": "D",
+                "text": "Professional services"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ]
+    },
+    {
+        "id": 15,
+        "text": "14. Virtual machines that are not bound to an EIP can access the Internet by configuring user-defined routes.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            false
+        ]
+    },
+    {
+        "id": 16,
+        "text": "15. File systems can be accessed through VPC.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            false
+        ]
+    },
+    {
+        "id": 17,
+        "text": "16. In a VPC creation project, which of the following parameters implements the automatic IP address acquisition function?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "DHCP"
+            },
+            {
+                "letter": "B",
+                "text": "Network segment"
+            },
+            {
+                "letter": "C",
+                "text": "Partition"
+            },
+            {
+                "letter": "D",
+                "text": "Gateway"
+            }
+        ],
+        "correctAnswer": [
+            "A"
+        ]
+    },
+    {
+        "id": 18,
+        "text": "17. What information needs to be configured before creating a file system?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "AS"
+            },
+            {
+                "letter": "B",
+                "text": "VPC"
+            },
+            {
+                "letter": "C",
+                "text": "EIP"
+            },
+            {
+                "letter": "D",
+                "text": "ELB"
+            }
+        ],
+        "correctAnswer": [
+            "B"
+        ]
+    },
+    {
+        "id": 19,
+        "text": "18. After an ECS is bound to (), it can be accessed through a fixed public IP address.",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Idols"
+            },
+            {
+                "letter": "B",
+                "text": "System disk"
+            },
+            {
+                "letter": "C",
+                "text": "Data disk"
+            },
+            {
+                "letter": "D",
+                "text": "Elastic IP address"
+            }
+        ],
+        "correctAnswer": [
+            "D"
+        ]
+    },
+    {
+        "id": 20,
+        "text": "19. VPC subnet segments can be modified after creation.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            false
+        ]
+    },
+    {
+        "id": 21,
+        "text": "20. Which of the following is not a primary application scenario for a VPC?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Mutual access of VMs"
+            },
+            {
+                "letter": "B",
+                "text": "Accessing HUAWEI Vmall from the desktop cloud"
+            },
+            {
+                "letter": "C",
+                "text": "VM access to the extranet"
+            },
+            {
+                "letter": "D",
+                "text": "VPN access to VMs"
+            }
+        ],
+        "correctAnswer": [
+            "B"
+        ]
+    },
+    {
+        "id": 22,
+        "text": "21. What creates fully isolated logical partitions?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Elastic scaling"
+            },
+            {
+                "letter": "B",
+                "text": "Virtual Private Cloud"
+            },
+            {
+                "letter": "C",
+                "text": "Dedicated Cloud"
+            },
+            {
+                "letter": "D",
+                "text": "Cloud Container Engine"
+            }
+        ],
+        "correctAnswer": [
+            "B"
+        ]
+    },
+    {
+        "id": 23,
+        "text": "22. What is necessary to create for communication between two VPCs?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "SNAT"
+            },
+            {
+                "letter": "B",
+                "text": "VPC peering connection"
+            },
+            {
+                "letter": "C",
+                "text": "EIP"
+            },
+            {
+                "letter": "D",
+                "text": "Work orders"
+            }
+        ],
+        "correctAnswer": [
+            "B"
+        ]
+    },
+    {
+        "id": 24,
+        "text": "23. What are the advantages of VPC? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Security isolation"
+            },
+            {
+                "letter": "B",
+                "text": "Flexible deployment"
+            },
+            {
+                "letter": "C",
+                "text": "Dynamic BGP"
+            },
+            {
+                "letter": "D",
+                "text": "Hybrid cloud deployment"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ]
+    },
+    {
+        "id": 25,
+        "text": "24. Direct Connect is a network service that connects the local data center and the public cloud. What types of Direct Connect are currently supported?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "MPLS VPN"
+            },
+            {
+                "letter": "B",
+                "text": "IPSec VPN"
+            },
+            {
+                "letter": "C",
+                "text": "SSL VPN"
+            },
+            {
+                "letter": "D",
+                "text": "OSPF VPN"
+            }
+        ],
+        "correctAnswer": [
+            "A"
+        ]
+    },
+    {
+        "id": 26,
+        "text": "25. Which of the following actions incurs charges?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Creating an EIP"
+            },
+            {
+                "letter": "B",
+                "text": "Creating a subnet"
+            },
+            {
+                "letter": "C",
+                "text": "Creating a VPC"
+            },
+            {
+                "letter": "D",
+                "text": "Creating a security group"
+            }
+        ],
+        "correctAnswer": [
+            "A"
+        ]
+    },
+    {
+        "id": 27,
+        "text": "26. What are the service concepts of VPC? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Subnet"
+            },
+            {
+                "letter": "B",
+                "text": "EIP"
+            },
+            {
+                "letter": "C",
+                "text": "Security group"
+            },
+            {
+                "letter": "D",
+                "text": "VPN"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ]
+    },
+    {
+        "id": 28,
+        "text": "27. Which of the following network segments are supported by VPC? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "192.168.0.0/23"
+            },
+            {
+                "letter": "B",
+                "text": "172.16.0.1/24"
+            },
+            {
+                "letter": "C",
+                "text": "10.0.0.5/24"
+            },
+            {
+                "letter": "D",
+                "text": "10.0.25.0/24"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C"
+        ]
+    },
+    {
+        "id": 29,
+        "text": "28. IAM is a unified identity authentication service.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 30,
+        "text": "29. The management console is available without logging in.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            false
+        ]
+    },
+    {
+        "id": 31,
+        "text": "30. What are the key features of IAM? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Centralized control of users and security credentials"
+            },
+            {
+                "letter": "B",
+                "text": "Centralized control of user access"
+            },
+            {
+                "letter": "C",
+                "text": "Permissions based on user groups"
+            },
+            {
+                "letter": "D",
+                "text": "Support for Huawei customer service operations"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ]
+    },
+    {
+        "id": 32,
+        "text": "31. How many common services can be added to the management console at most?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "5"
+            },
+            {
+                "letter": "B",
+                "text": "5"
+            },
+            {
+                "letter": "C",
+                "text": "7"
+            },
+            {
+                "letter": "D",
+                "text": "8"
+            }
+        ],
+        "correctAnswer": [
+            "C"
+        ]
+    },
+    {
+        "id": 33,
+        "text": "32. How many types of Huawei Enterprise Cloud login users are there?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "1"
+            },
+            {
+                "letter": "B",
+                "text": "2"
+            },
+            {
+                "letter": "C",
+                "text": "3"
+            },
+            {
+                "letter": "D",
+                "text": "4"
+            }
+        ],
+        "correctAnswer": [
+            "B"
+        ]
+    },
+    {
+        "id": 34,
+        "text": "33. You can view all types of HUAWEI CLOUD service products in the management console.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 35,
+        "text": "34. What computing services does Huawei HUAWEI CLOUD provide? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Elastic Scaling Service"
+            },
+            {
+                "letter": "B",
+                "text": "ECS"
+            },
+            {
+                "letter": "C",
+                "text": "Image Service"
+            },
+            {
+                "letter": "D",
+                "text": "Cloud Hard Disk"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C"
+        ]
+    },
+    {
+        "id": 36,
+        "text": "35. When creating an ECS, you can initialize an ECS using the file injection function provided by the system.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 37,
+        "text": "36. What are the ECS login authentication methods? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Password"
+            },
+            {
+                "letter": "B",
+                "text": "Password"
+            },
+            {
+                "letter": "C",
+                "text": "Fingerprint"
+            },
+            {
+                "letter": "D",
+                "text": "Key pair"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "D"
+        ]
+    },
+    {
+        "id": 38,
+        "text": "37. What are the necessary steps to create a private Windows image using an ECS? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Configuring a Windows ECS"
+            },
+            {
+                "letter": "B",
+                "text": "Installing Cloudbase-Init"
+            },
+            {
+                "letter": "C",
+                "text": "Creating a private Windows image"
+            },
+            {
+                "letter": "D",
+                "text": "Viewing and deleting network rule files"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C"
+        ]
+    },
+    {
+        "id": 39,
+        "text": "38. GPUs are applied to application scenarios such as graphics rendering and engineering drawing in a virtualization environment and desktop cloud scenarios.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 40,
+        "text": "39. According to Huawei cloud services, which cloud service is not a computing cloud service?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Elastic Cloud Service"
+            },
+            {
+                "letter": "B",
+                "text": "Elastic Scaling Cloud Service"
+            },
+            {
+                "letter": "C",
+                "text": "Virtual Private Cloud"
+            },
+            {
+                "letter": "D",
+                "text": "Bare Metal Service"
+            }
+        ],
+        "correctAnswer": [
+            "C"
+        ]
+    },
+    {
+        "id": 41,
+        "text": "40. What are the components of ECS? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "CPU"
+            },
+            {
+                "letter": "B",
+                "text": "Memory"
+            },
+            {
+                "letter": "C",
+                "text": "Image"
+            },
+            {
+                "letter": "D",
+                "text": "Cloud Hard Disk"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ]
+    },
+    {
+        "id": 42,
+        "text": "41. According to Huawei cloud services, which cloud service is not a computing cloud service?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Elastic Cloud Service"
+            },
+            {
+                "letter": "B",
+                "text": "Elastic Scaling Cloud Service"
+            },
+            {
+                "letter": "C",
+                "text": "Virtual Private Cloud"
+            },
+            {
+                "letter": "D",
+                "text": "Bare Metal Service"
+            }
+        ],
+        "correctAnswer": [
+            "C"
+        ]
+    },
+    {
+        "id": 43,
+        "text": "42. What is not a Huawei cloud computing service?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Elastic Scaling"
+            },
+            {
+                "letter": "B",
+                "text": "Bare Metal Server"
+            },
+            {
+                "letter": "C",
+                "text": "Image Service"
+            },
+            {
+                "letter": "D",
+                "text": "Scalable File Service"
+            }
+        ],
+        "correctAnswer": [
+            "D"
+        ]
+    },
+    {
+        "id": 44,
+        "text": "43. Which of the following are computing services?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "ECS"
+            },
+            {
+                "letter": "B",
+                "text": "Image Service"
+            },
+            {
+                "letter": "C",
+                "text": "Virtual Private Cloud"
+            },
+            {
+                "letter": "D",
+                "text": "Dedicated Cloud"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "D"
+        ]
+    },
+    {
+        "id": 45,
+        "text": "44. ECS is charged in annual/monthly or pay-per-use mode.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 46,
+        "text": "45. Which of the following is a problem with traditional PC offices?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "High O&M management costs"
+            },
+            {
+                "letter": "B",
+                "text": "Poor video playback experience"
+            },
+            {
+                "letter": "C",
+                "text": "Inability to monitor PC usage behavior"
+            },
+            {
+                "letter": "D",
+                "text": "Poor software compatibility"
+            }
+        ],
+        "correctAnswer": [
+            "A"
+        ]
+    },
+    {
+        "id": 47,
+        "text": "46. When creating multiple virtual machines, you can bind an EIP so that multiple virtual machines can access the Internet simultaneously.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            false
+        ]
+    },
+    {
+        "id": 48,
+        "text": "47. Which of the following functions are provided by ECS? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Users can create and delete virtual machines, change virtual machine specifications, start and stop virtual machines"
+            },
+            {
+                "letter": "B",
+                "text": "Users can add and remove extended network adapters, add EIPs, and attach and detach disks"
+            },
+            {
+                "letter": "C",
+                "text": "In the management console, users can view information about their ECS resources"
+            },
+            {
+                "letter": "D",
+                "text": "Users can set alarm rules for ECS"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ]
+    },
+    {
+        "id": 49,
+        "text": "48. How long does it take to request an ECS?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "A few seconds"
+            },
+            {
+                "letter": "B",
+                "text": "A few minutes"
+            },
+            {
+                "letter": "C",
+                "text": "A few hours"
+            },
+            {
+                "letter": "D",
+                "text": "A few days"
+            }
+        ],
+        "correctAnswer": [
+            "B"
+        ]
+    },
+    {
+        "id": 50,
+        "text": "49. After creating an ECS, the used bandwidth cannot be modified.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            "Incorrect (it can be modified)"
+        ]
+    },
+    {
+        "id": 51,
+        "text": "50. If the capacity of the data disk attached to an ECS is insufficient, you must detach it and purchase a larger capacity disk.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            false
+        ]
+    },
+    {
+        "id": 52,
+        "text": "51. After attaching an EVS disk to an ECS, you can use the EVS disk directly.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            false
+        ]
+    },
+    {
+        "id": 53,
+        "text": "52. EVS disks must be used with ECS.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            false
+        ]
+    },
+    {
+        "id": 54,
+        "text": "53. How many EVS disks can be attached to an ECS at the same time?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "8"
+            },
+            {
+                "letter": "B",
+                "text": "9"
+            },
+            {
+                "letter": "C",
+                "text": "10"
+            },
+            {
+                "letter": "D",
+                "text": "11"
+            }
+        ],
+        "correctAnswer": [
+            "C"
+        ]
+    },
+    {
+        "id": 55,
+        "text": "54. EVS is a scalable virtual block storage service based on distributed architecture.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 56,
+        "text": "55. Multiple EVS disks can be attached to an ECS.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 57,
+        "text": "56. Which of the following services can be used with EVS disks? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "ECS"
+            },
+            {
+                "letter": "B",
+                "text": "Image Service"
+            },
+            {
+                "letter": "C",
+                "text": "Cloud Hard Disk Backup Service"
+            },
+            {
+                "letter": "D",
+                "text": "Cloud Monitoring Service"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "C",
+            "D"
+        ]
+    },
+    {
+        "id": 58,
+        "text": "57. Which of the following management operations is not supported by EVS disks?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Attach/detach"
+            },
+            {
+                "letter": "B",
+                "text": "Capacity expansion"
+            },
+            {
+                "letter": "C",
+                "text": "Capacity reduction"
+            },
+            {
+                "letter": "D",
+                "text": "Backup"
+            }
+        ],
+        "correctAnswer": [
+            "C"
+        ]
+    },
+    {
+        "id": 59,
+        "text": "58. When an EVS disk is detached from an ECS, the data on the EVS disk is lost.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            false
+        ]
+    },
+    {
+        "id": 60,
+        "text": "59. What does an ECS use to store data?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Elastic Scaling"
+            },
+            {
+                "letter": "B",
+                "text": "Image"
+            },
+            {
+                "letter": "C",
+                "text": "Cloud Hard Disk"
+            },
+            {
+                "letter": "D",
+                "text": "Dedicated Cloud"
+            }
+        ],
+        "correctAnswer": [
+            "C"
+        ]
+    },
+    {
+        "id": 61,
+        "text": "60. What are the types of EVS disks? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Ultra-high I/O"
+            },
+            {
+                "letter": "B",
+                "text": "High I/O"
+            },
+            {
+                "letter": "C",
+                "text": "Common I/O"
+            },
+            {
+                "letter": "D",
+                "text": "I/O Optimization"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C"
+        ]
+    },
+    {
+        "id": 62,
+        "text": "61. What can be done if an ECS’s storage space is insufficient?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Detach a disk"
+            },
+            {
+                "letter": "B",
+                "text": "Reinstall the operating system"
+            },
+            {
+                "letter": "C",
+                "text": "Expand disk capacity"
+            },
+            {
+                "letter": "D",
+                "text": "Change the operating system"
+            }
+        ],
+        "correctAnswer": [
+            "C"
+        ]
+    },
+    {
+        "id": 63,
+        "text": "62. Which of the following states can be used to create an EVS disk backup?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Available"
+            },
+            {
+                "letter": "B",
+                "text": "Deleting"
+            },
+            {
+                "letter": "C",
+                "text": "Deletion error"
+            },
+            {
+                "letter": "D",
+                "text": "Creating"
+            }
+        ],
+        "correctAnswer": [
+            "A"
+        ]
+    },
+    {
+        "id": 64,
+        "text": "63. Which of the following services depend on VBS? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "ECS"
+            },
+            {
+                "letter": "B",
+                "text": "Cloud Hard Disk"
+            },
+            {
+                "letter": "C",
+                "text": "Object Storage"
+            },
+            {
+                "letter": "D",
+                "text": "Image"
+            }
+        ],
+        "correctAnswer": [
+            "B",
+            "C"
+        ]
+    },
+    {
+        "id": 65,
+        "text": "64. Which of the following statements about EVS disk backup is correct?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "There is no quota limit for EVS disk backup"
+            },
+            {
+                "letter": "B",
+                "text": "After backing up an EVS disk and expanding its capacity, you can use the previous backup to restore data. After restoration, the EVS disk space remains unchanged"
+            },
+            {
+                "letter": "C",
+                "text": "After backing up an EVS disk before capacity expansion, you cannot use the previous backup to restore data because the EVS disk space after restoration reverts to the space before expansion"
+            },
+            {
+                "letter": "D",
+                "text": "After expanding the capacity of an EVS disk, perform a backup and use the backup to restore data. After restoration, the EVS disk space remains unchanged"
+            }
+        ],
+        "correctAnswer": [
+            "D"
+        ]
+    },
+    {
+        "id": 66,
+        "text": "65. The time required to back up an EVS disk depends only on the amount of data on the disk.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            false
+        ]
+    },
+    {
+        "id": 67,
+        "text": "66. Which of the following statements about EVS disk backup is correct?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "EVS disk backup supports multiple simultaneous backups of the same EVS disk"
+            },
+            {
+                "letter": "B",
+                "text": "You can restore multiple hard disks in batches with one backup"
+            },
+            {
+                "letter": "C",
+                "text": "You can bind multiple EVS disks through a backup policy to perform batch backups"
+            },
+            {
+                "letter": "D",
+                "text": "When backing up an EVS disk, you must stop the ECS"
+            }
+        ],
+        "correctAnswer": [
+            "C"
+        ]
+    },
+    {
+        "id": 68,
+        "text": "67. What are the main application scenarios for EVS Backup? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Hackers or viruses"
+            },
+            {
+                "letter": "B",
+                "text": "Data deleted by mistake"
+            },
+            {
+                "letter": "C",
+                "text": "File and data storage"
+            },
+            {
+                "letter": "D",
+                "text": "Application error"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "D"
+        ]
+    },
+    {
+        "id": 69,
+        "text": "68. EVS disk backup does not support batch backups of EVS disks.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            false
+        ]
+    },
+    {
+        "id": 70,
+        "text": "69. Which of the following statements are correct? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "EVS Backup provides data protection services for EVS disks"
+            },
+            {
+                "letter": "B",
+                "text": "When an EVS disk is faulty, you can use the EVS disk backup to quickly restore data"
+            },
+            {
+                "letter": "C",
+                "text": "EVS disk backup is implemented based on snapshots"
+            },
+            {
+                "letter": "D",
+                "text": "Online disk backup"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ]
+    },
+    {
+        "id": 71,
+        "text": "70. If the system disk is faulty, you can create an EVS disk through the system disk backup and attach it to the ECS as a system disk.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            false
+        ]
+    },
+    {
+        "id": 72,
+        "text": "71. File system data is stored in erasure code mode.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 73,
+        "text": "72. What file access protocol does SFS support?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "CIFS"
+            },
+            {
+                "letter": "B",
+                "text": "FTP"
+            },
+            {
+                "letter": "C",
+                "text": "HTTP"
+            },
+            {
+                "letter": "D",
+                "text": "NFS"
+            }
+        ],
+        "correctAnswer": [
+            "D"
+        ]
+    },
+    {
+        "id": 74,
+        "text": "73. SFS can set read-only permission control for users.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            false
+        ]
+    },
+    {
+        "id": 75,
+        "text": "74. Which of the following are the main application scenarios for SFS? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Media processing"
+            },
+            {
+                "letter": "B",
+                "text": "Log processing"
+            },
+            {
+                "letter": "C",
+                "text": "Content management home directory"
+            },
+            {
+                "letter": "D",
+                "text": "High-performance computing"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ]
+    },
+    {
+        "id": 76,
+        "text": "75. Which of the following statements about SFS are correct? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "File systems attached to ECSs can belong to different VPCs"
+            },
+            {
+                "letter": "B",
+                "text": "The parameters of a created file system cannot be modified"
+            },
+            {
+                "letter": "C",
+                "text": "File systems can access different AZs in the same VPC"
+            },
+            {
+                "letter": "D",
+                "text": "SFS file system performance increases as capacity increases"
+            }
+        ],
+        "correctAnswer": [
+            "B",
+            "C",
+            "D"
+        ]
+    },
+    {
+        "id": 77,
+        "text": "76. In which state can a shared file system be deleted?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Creating"
+            },
+            {
+                "letter": "B",
+                "text": "Unavailable"
+            },
+            {
+                "letter": "C",
+                "text": "Deleting"
+            },
+            {
+                "letter": "D",
+                "text": "Deletion error"
+            }
+        ],
+        "correctAnswer": [
+            "B"
+        ]
+    },
+    {
+        "id": 78,
+        "text": "77. What are the advantages of SFS over traditional file-sharing storage? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "File sharing"
+            },
+            {
+                "letter": "B",
+                "text": "Seamless integration"
+            },
+            {
+                "letter": "C",
+                "text": "Easy to operate but expensive"
+            },
+            {
+                "letter": "D",
+                "text": "High reliability"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "D"
+        ]
+    },
+    {
+        "id": 79,
+        "text": "78. What are the methods for creating a private image? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Creation from a cloud server"
+            },
+            {
+                "letter": "B",
+                "text": "Creation from an OBS file"
+            },
+            {
+                "letter": "C",
+                "text": "Created from an external image file"
+            },
+            {
+                "letter": "D",
+                "text": "Created from a physical server"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "C"
+        ]
+    },
+    {
+        "id": 80,
+        "text": "79. There is no limit on the size of the exported image.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            false
+        ]
+    },
+    {
+        "id": 81,
+        "text": "80. Image creation must be disabled.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 82,
+        "text": "81. Which of the following image types is an image converted from an ECS?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Public image"
+            },
+            {
+                "letter": "B",
+                "text": "Private image"
+            },
+            {
+                "letter": "C",
+                "text": "Shared image"
+            },
+            {
+                "letter": "D",
+                "text": "Marketplace image"
+            }
+        ],
+        "correctAnswer": [
+            "B"
+        ]
+    },
+    {
+        "id": 83,
+        "text": "82. What types of images are supported by IMS? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Public image"
+            },
+            {
+                "letter": "B",
+                "text": "Private image"
+            },
+            {
+                "letter": "C",
+                "text": "Shared image"
+            },
+            {
+                "letter": "D",
+                "text": "Secret image"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C"
+        ]
+    },
+    {
+        "id": 84,
+        "text": "83. Which of the following images is a standard image provided by the public cloud platform and visible to all users?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Common image"
+            },
+            {
+                "letter": "B",
+                "text": "Private image"
+            },
+            {
+                "letter": "C",
+                "text": "Shared image"
+            },
+            {
+                "letter": "D",
+                "text": "Marketplace image"
+            }
+        ],
+        "correctAnswer": [
+            "A"
+        ]
+    },
+    {
+        "id": 85,
+        "text": "84. IMS provides flexible self-service and comprehensive image management capabilities. Users can create private images and create or copy ECSs in batches.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 86,
+        "text": "85. What operation is not allowed for shared image recipients?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Sharing a specified image"
+            },
+            {
+                "letter": "B",
+                "text": "Accepting shared images from other users"
+            },
+            {
+                "letter": "C",
+                "text": "Rejecting shared images provided by other users"
+            },
+            {
+                "letter": "D",
+                "text": "Deleting accepted shared images"
+            }
+        ],
+        "correctAnswer": [
+            "A"
+        ]
+    },
+    {
+        "id": 87,
+        "text": "86. What operations can shared image providers perform? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Sharing a specified image"
+            },
+            {
+                "letter": "B",
+                "text": "Deleting a shared image"
+            },
+            {
+                "letter": "C",
+                "text": "Adding a shared tenant for an image"
+            },
+            {
+                "letter": "D",
+                "text": "Deleting a shared tenant from an image"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ]
+    },
+    {
+        "id": 88,
+        "text": "87. What are the user image replication scenarios? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Copying an unencrypted image to an unencrypted image"
+            },
+            {
+                "letter": "B",
+                "text": "Copying an unencrypted image as an encrypted image"
+            },
+            {
+                "letter": "C",
+                "text": "Copying an encrypted image as an encrypted image"
+            },
+            {
+                "letter": "D",
+                "text": "Copying an encrypted image as an unencrypted image"
+            }
+        ],
+        "correctAnswer": [
+            "B",
+            "C",
+            "D"
+        ]
+    },
+    {
+        "id": 89,
+        "text": "88. After creating AS using a wizard, you must manually enable the AS group.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            false
+        ]
+    },
+    {
+        "id": 90,
+        "text": "89. What two application scaling modes are supported?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Policy-based scaling, plan-based scaling"
+            },
+            {
+                "letter": "B",
+                "text": "Plan-based scaling, CPU-based scaling"
+            },
+            {
+                "letter": "C",
+                "text": "Plan-based scaling, memory-based scaling"
+            },
+            {
+                "letter": "D",
+                "text": "Policy-based scaling, memory-based scaling"
+            }
+        ],
+        "correctAnswer": [
+            "A"
+        ]
+    },
+    {
+        "id": 91,
+        "text": "90. To implement dynamic resource expansion, which of the following policies is selected when creating an AS policy?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Timing policy"
+            },
+            {
+                "letter": "B",
+                "text": "Periodic policy"
+            },
+            {
+                "letter": "C",
+                "text": "Alarm policy"
+            },
+            {
+                "letter": "D",
+                "text": "Random policy"
+            }
+        ],
+        "correctAnswer": [
+            "C"
+        ]
+    },
+    {
+        "id": 92,
+        "text": "91. What are the main objectives of elastic scaling? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Avoid build task queues"
+            },
+            {
+                "letter": "B",
+                "text": "Improve build resource utilization efficiency"
+            },
+            {
+                "letter": "C",
+                "text": "Improved node build speed"
+            },
+            {
+                "letter": "D",
+                "text": "Ensure build environment security"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C"
+        ]
+    },
+    {
+        "id": 93,
+        "text": "92. What are the methods for adding instances to an AS group? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Scaling activities"
+            },
+            {
+                "letter": "B",
+                "text": "Manual instance addition"
+            },
+            {
+                "letter": "C",
+                "text": "Modifying the expected number of instances"
+            },
+            {
+                "letter": "D",
+                "text": "Scaling configuration"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C"
+        ]
+    },
+    {
+        "id": 94,
+        "text": "93. How many AS configurations can be set in an AS group?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "1"
+            },
+            {
+                "letter": "B",
+                "text": "2"
+            },
+            {
+                "letter": "C",
+                "text": "3"
+            },
+            {
+                "letter": "D",
+                "text": "4"
+            }
+        ],
+        "correctAnswer": [
+            "A"
+        ]
+    },
+    {
+        "id": 95,
+        "text": "94. AS can only dynamically add or reduce server resources in a specified period.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            false
+        ]
+    },
+    {
+        "id": 96,
+        "text": "95. If only one AS policy is enabled in the AS group and the AS policy action is to add two instances, how many instances are in the AS group?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "1"
+            },
+            {
+                "letter": "B",
+                "text": "2"
+            },
+            {
+                "letter": "C",
+                "text": "3"
+            },
+            {
+                "letter": "D",
+                "text": "Not sure"
+            }
+        ],
+        "correctAnswer": [
+            "D"
+        ]
+    },
+    {
+        "id": 97,
+        "text": "96. Auto Scaling is a service that automatically adjusts user service resources based on service requirements.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 98,
+        "text": "97. How many types of scaling policies does AS support?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "4"
+            },
+            {
+                "letter": "B",
+                "text": "3"
+            },
+            {
+                "letter": "C",
+                "text": "2"
+            },
+            {
+                "letter": "D",
+                "text": "1"
+            }
+        ],
+        "correctAnswer": [
+            "B"
+        ]
+    },
+    {
+        "id": 99,
+        "text": "98. What are the types of AS policies? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Timing policy"
+            },
+            {
+                "letter": "B",
+                "text": "Periodic policy"
+            },
+            {
+                "letter": "C",
+                "text": "Alarm policy"
+            },
+            {
+                "letter": "D",
+                "text": "Random policy"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C"
+        ]
+    },
+    {
+        "id": 100,
+        "text": "99. Which of the following options does not exist for creating a listener?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Load balancing protocol/port"
+            },
+            {
+                "letter": "B",
+                "text": "VPC"
+            },
+            {
+                "letter": "C",
+                "text": "HTTPS certificate"
+            },
+            {
+                "letter": "D",
+                "text": "Load mode"
+            }
+        ],
+        "correctAnswer": [
+            "B"
+        ]
+    },
+    {
+        "id": 101,
+        "text": "100. When extranet traffic enters the load balancer, which of the following components is accessed first?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Firewall"
+            },
+            {
+                "letter": "B",
+                "text": "Nginx"
+            },
+            {
+                "letter": "C",
+                "text": "LVS"
+            },
+            {
+                "letter": "D",
+                "text": "Health check"
+            }
+        ],
+        "correctAnswer": [
+            "B"
+        ]
+    },
+    {
+        "id": 102,
+        "text": "101. Which of the following statements about ELB product functions is incorrect?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Provide private line connection"
+            },
+            {
+                "letter": "B",
+                "text": "Provides HTTPS certificate management function"
+            },
+            {
+                "letter": "C",
+                "text": "Public and private network"
+            },
+            {
+                "letter": "D",
+                "text": "Automatic scaling based on traffic"
+            }
+        ],
+        "correctAnswer": [
+            "A"
+        ]
+    },
+    {
+        "id": 103,
+        "text": "102. CCE does not support elastic load balancing.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            false
+        ]
+    },
+    {
+        "id": 104,
+        "text": "103. Which of the following statements about health checks is correct? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "If no response is received within the timeout period, it is considered an error"
+            },
+            {
+                "letter": "B",
+                "text": "Check whether the route protocol supports HTTPS"
+            },
+            {
+                "letter": "C",
+                "text": "When the number of failures exceeds the health threshold, the service is unavailable"
+            },
+            {
+                "letter": "D",
+                "text": "When the number of failures exceeds the health threshold, the service is unavailable"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "D"
+        ]
+    },
+    {
+        "id": 105,
+        "text": "104. Elastic Load Balancing automatically distributes access traffic to multiple ECSs, expanding the service capabilities of the application system and achieving higher fault tolerance performance for applications.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 106,
+        "text": "105. What management functions does ELB support? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Creating a load balancer"
+            },
+            {
+                "letter": "B",
+                "text": "Deleting a load balancer"
+            },
+            {
+                "letter": "C",
+                "text": "Enabling the load balancer"
+            },
+            {
+                "letter": "D",
+                "text": "Disabling the load balancer"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ]
+    },
+    {
+        "id": 107,
+        "text": "106. Which of the following functions cannot be implemented in ELB?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Eliminating single points of failure"
+            },
+            {
+                "letter": "B",
+                "text": "Sharing the pressure of the service node"
+            },
+            {
+                "letter": "C",
+                "text": "Checking the health of the service node"
+            },
+            {
+                "letter": "D",
+                "text": "Layer 2 and Layer 3 data forwarding"
+            }
+        ],
+        "correctAnswer": [
+            "D"
+        ]
+    },
+    {
+        "id": 108,
+        "text": "107. Which of the following is not a basic ELB concept?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Firewall"
+            },
+            {
+                "letter": "B",
+                "text": "Load balancing"
+            },
+            {
+                "letter": "C",
+                "text": "Listener"
+            },
+            {
+                "letter": "D",
+                "text": "Instance (VM or application container)"
+            }
+        ],
+        "correctAnswer": [
+            "A"
+        ]
+    },
+    {
+        "id": 109,
+        "text": "108. Two sites communicate with each other through the Internet. IPSec VPNs can be deployed on firewalls at both ends to protect traffic between intranets.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 110,
+        "text": "109. When the load balancer type is a private network, which of the following protocols is not supported?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "TCP"
+            },
+            {
+                "letter": "B",
+                "text": "UDP"
+            },
+            {
+                "letter": "C",
+                "text": "HTTP"
+            },
+            {
+                "letter": "D",
+                "text": "HTTPS"
+            }
+        ],
+        "correctAnswer": [
+            "B"
+        ]
+    },
+    {
+        "id": 111,
+        "text": "110. VPC supports interconnection between a VPC and a traditional data center through connections such as Direct Connect or VPN for flexible resource integration.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 112,
+        "text": "111. Which of the following load modes are not supported by the listener? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Maximum connection"
+            },
+            {
+                "letter": "B",
+                "text": "Polling"
+            },
+            {
+                "letter": "C",
+                "text": "Set weight"
+            },
+            {
+                "letter": "D",
+                "text": "Minimum connection"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "C"
+        ]
+    },
+    {
+        "id": 113,
+        "text": "112. RDS can meet the changing requirements of the gaming industry, shorten the development period, and reduce R&D costs.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 114,
+        "text": "113. Which of the following are RDS functions? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Creating a database cluster"
+            },
+            {
+                "letter": "B",
+                "text": "Disk capacity expansion"
+            },
+            {
+                "letter": "C",
+                "text": "Adding a read replica"
+            },
+            {
+                "letter": "D",
+                "text": "Creating/restoring snapshots"
+            },
+            {
+                "letter": "E",
+                "text": "Restoring a backup to a specified time node"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+        ]
+    },
+    {
+        "id": 115,
+        "text": "114. Which of the following options belong to database instance lifecycle management? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Adding a read replica"
+            },
+            {
+                "letter": "B",
+                "text": "Viewing database instance information"
+            },
+            {
+                "letter": "C",
+                "text": "Expanding database instance space"
+            },
+            {
+                "letter": "D",
+                "text": "Deleting a database cluster"
+            },
+            {
+                "letter": "E",
+                "text": "Restarting the database instance"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+        ]
+    },
+    {
+        "id": 116,
+        "text": "115. High availability is not a key feature of RDS.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            false
+        ]
+    },
+    {
+        "id": 117,
+        "text": "116. Which of the following is not an RDS instance type?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Primary instance"
+            },
+            {
+                "letter": "B",
+                "text": "Standby instance"
+            },
+            {
+                "letter": "C",
+                "text": "Read-only replica"
+            },
+            {
+                "letter": "D",
+                "text": "Disk"
+            }
+        ],
+        "correctAnswer": [
+            "D"
+        ]
+    },
+    {
+        "id": 118,
+        "text": "117. Which of the following options does not meet RDS characteristics?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "High DBA costs"
+            },
+            {
+                "letter": "B",
+                "text": "No need to purchase and install any software or hardware"
+            },
+            {
+                "letter": "C",
+                "text": "Pay only for RDS rental"
+            },
+            {
+                "letter": "D",
+                "text": "Reduce DBA skill requirements and costs"
+            }
+        ],
+        "correctAnswer": [
+            "A"
+        ]
+    },
+    {
+        "id": 119,
+        "text": "118. Compared to self-built databases, RDS has higher costs and O&M workload.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            false
+        ]
+    },
+    {
+        "id": 120,
+        "text": "119. Which of the following cloud services can be used with RDS to ensure network security isolation between RDS instances and other services?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "ECS"
+            },
+            {
+                "letter": "B",
+                "text": "VPC"
+            },
+            {
+                "letter": "C",
+                "text": "CES"
+            },
+            {
+                "letter": "D",
+                "text": "OBS"
+            }
+        ],
+        "correctAnswer": [
+            "B"
+        ]
+    },
+    {
+        "id": 121,
+        "text": "120. Which of the following services helps users monitor RDS resource dynamics?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "VPC"
+            },
+            {
+                "letter": "B",
+                "text": "OBS"
+            },
+            {
+                "letter": "C",
+                "text": "ECS"
+            },
+            {
+                "letter": "D",
+                "text": "CES"
+            }
+        ],
+        "correctAnswer": [
+            "D"
+        ]
+    },
+    {
+        "id": 122,
+        "text": "121. What are the key functions and characteristics of RDS? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "High availability"
+            },
+            {
+                "letter": "B",
+                "text": "Performance monitoring"
+            },
+            {
+                "letter": "C",
+                "text": "Backup and restoration"
+            },
+            {
+                "letter": "D",
+                "text": "Traffic cleaning"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C"
+        ]
+    },
+    {
+        "id": 123,
+        "text": "122. Which of the following options is not a restriction on using RDS?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "The RDS database instance must be created in the VPC subnet"
+            },
+            {
+                "letter": "B",
+                "text": "Users can create and automatically manage instances of multiple database engines in the RDS system"
+            },
+            {
+                "letter": "C",
+                "text": "Only applications in the same VPC as the database instance are allowed access"
+            },
+            {
+                "letter": "D",
+                "text": "The RDS read replica instance must be created in the same subnet as the primary database instance"
+            }
+        ],
+        "correctAnswer": [
+            "B"
+        ]
+    },
+    {
+        "id": 124,
+        "text": "123. The cloud security service system consists of five parts: network security, data security, application security, security assessment, and security support.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 125,
+        "text": "124. In the cloud computing environment, confidentiality, integrity, and availability remain the fundamental security requirements on the user side.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 126,
+        "text": "125. Security issues faced by users in the cloud computing environment are caused by data outsourcing and service outsourcing.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 127,
+        "text": "126. Which of the following are the main types of anti-DDoS protection? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Anti-traffic attack"
+            },
+            {
+                "letter": "B",
+                "text": "Protection against data attacks"
+            },
+            {
+                "letter": "C",
+                "text": "Brute force attack"
+            },
+            {
+                "letter": "D",
+                "text": "Application attack resistance"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "D"
+        ]
+    },
+    {
+        "id": 128,
+        "text": "127. SSA analyzes the security situation from which perspectives? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Global perspective"
+            },
+            {
+                "letter": "B",
+                "text": "User perspective"
+            },
+            {
+                "letter": "C",
+                "text": "Management perspective"
+            },
+            {
+                "letter": "D",
+                "text": "Attacker perspective"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "D"
+        ]
+    },
+    {
+        "id": 129,
+        "text": "128. Which of the following scenarios does not apply to the Key Management Service (KMS)?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Encryption and decryption of network transmission data"
+            },
+            {
+                "letter": "B",
+                "text": "Encryption and decryption of user personal data"
+            },
+            {
+                "letter": "C",
+                "text": "Encryption and decryption of core service data"
+            },
+            {
+                "letter": "D",
+                "text": "Encryption and decryption of key information resources"
+            }
+        ],
+        "correctAnswer": [
+            "A"
+        ]
+    },
+    {
+        "id": 130,
+        "text": "129. Which of the following cloud products is a data security type?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "HID (Host Intrusion Detection)"
+            },
+            {
+                "letter": "B",
+                "text": "HVD (Host Vulnerability Detection)"
+            },
+            {
+                "letter": "C",
+                "text": "Key Management Service (KMS)"
+            },
+            {
+                "letter": "D",
+                "text": "Certificate Management Service (SCS)"
+            }
+        ],
+        "correctAnswer": [
+            "C"
+        ]
+    },
+    {
+        "id": 131,
+        "text": "130. When using IPSec VPN for communication, encryption and decryption verification is performed on firewalls at both ends.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 132,
+        "text": "131. Data security ensures the confidentiality and integrity of applications and user data storage in the cloud computing environment.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 133,
+        "text": "132. Which of the following features is not a primary function of WTP?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Website file protection"
+            },
+            {
+                "letter": "B",
+                "text": "Alarm information logging"
+            },
+            {
+                "letter": "C",
+                "text": "Protection detail statistics"
+            },
+            {
+                "letter": "D",
+                "text": "SQL injection prevention"
+            }
+        ],
+        "correctAnswer": [
+            "D"
+        ]
+    },
+    {
+        "id": 134,
+        "text": "133. Which of the following are the objectives of cloud security services? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Data protection"
+            },
+            {
+                "letter": "B",
+                "text": "Environment protection"
+            },
+            {
+                "letter": "C",
+                "text": "Service independence and connectivity"
+            },
+            {
+                "letter": "D",
+                "text": "Security assessment"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ]
+    },
+    {
+        "id": 135,
+        "text": "134. Which of the following objectives is not covered by cloud security services?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "User security"
+            },
+            {
+                "letter": "B",
+                "text": "Cloud platform security"
+            },
+            {
+                "letter": "C",
+                "text": "Data security"
+            },
+            {
+                "letter": "D",
+                "text": "Service security"
+            }
+        ],
+        "correctAnswer": [
+            "B"
+        ]
+    },
+    {
+        "id": 136,
+        "text": "135. Which of the following are the main functions of HID (Host Intrusion Detection)? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Brute force cracking monitoring"
+            },
+            {
+                "letter": "B",
+                "text": "Remote login detection"
+            },
+            {
+                "letter": "C",
+                "text": "Weak password detection"
+            },
+            {
+                "letter": "D",
+                "text": "Database process permission checking"
+            },
+            {
+                "letter": "E",
+                "text": "Web backdoor file detection"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+        ]
+    },
+    {
+        "id": 137,
+        "text": "136. Which of the following statements about KMS is incorrect?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Management of cloud platform and tenant keys"
+            },
+            {
+                "letter": "B",
+                "text": "HSM (Hardware Security Module)"
+            },
+            {
+                "letter": "C",
+                "text": "Multi-layer key protection technology"
+            },
+            {
+                "letter": "D",
+                "text": "Support and application integration"
+            }
+        ],
+        "correctAnswer": [
+            "A"
+        ]
+    },
+    {
+        "id": 138,
+        "text": "137. Which of the following is not a primary function of Anti-DDoS?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Protection against DDoS attacks"
+            },
+            {
+                "letter": "B",
+                "text": "Monitoring of a single IP address"
+            },
+            {
+                "letter": "C",
+                "text": "Single IP address interception report"
+            },
+            {
+                "letter": "D",
+                "text": "Periodic ECS vulnerability analysis"
+            }
+        ],
+        "correctAnswer": [
+            "D"
+        ]
+    },
+    {
+        "id": 139,
+        "text": "138. Which of the following key technologies are used by the Security Situation Awareness Service (SSA)? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Big Data technology"
+            },
+            {
+                "letter": "B",
+                "text": "Crawler techniques"
+            },
+            {
+                "letter": "C",
+                "text": "Encryption technology"
+            },
+            {
+                "letter": "D",
+                "text": "Identity authentication technology"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B"
+        ]
+    },
+    {
+        "id": 140,
+        "text": "139. IPSec VPN is an encrypted tunnel technology that uses encrypted security services to establish confidential and secure communication tunnels between different networks. Which of the following is not a guaranteed feature of data packet transmission on the public network?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Time efficiency"
+            },
+            {
+                "letter": "B",
+                "text": "Integrity"
+            },
+            {
+                "letter": "C",
+                "text": "Authenticity"
+            },
+            {
+                "letter": "D",
+                "text": "Confidentiality"
+            }
+        ],
+        "correctAnswer": [
+            "A"
+        ]
+    },
+    {
+        "id": 141,
+        "text": "140. The Security Index Service (SIS) is a security support service product.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            false
+        ]
+    },
+    {
+        "id": 142,
+        "text": "141. Network security is an important component of cloud security to implement network isolation, address network attacks, and ensure network security.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 143,
+        "text": "142. Which of the following features is not a key feature of the Web Application Firewall (WAF)?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "SQL injection prevention"
+            },
+            {
+                "letter": "B",
+                "text": "Anti-webshell upload"
+            },
+            {
+                "letter": "C",
+                "text": "Anti-leeching"
+            },
+            {
+                "letter": "D",
+                "text": "Excessive traffic prevention"
+            }
+        ],
+        "correctAnswer": [
+            "D"
+        ]
+    },
+    {
+        "id": 144,
+        "text": "143. As an important component of cloud security services, application security ensures the security of elastic cloud computing servers and cloud computing applications running on them from the perspective of operating system and application security protection.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 145,
+        "text": "144. The Penetration Testing Service (PTS) is a security assessment service product.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            "Incorrect (security support)"
+        ]
+    },
+    {
+        "id": 146,
+        "text": "145. Which of the following user authentication modes is supported by Workspace?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "OpenLdap"
+            },
+            {
+                "letter": "B",
+                "text": "Active Directory"
+            },
+            {
+                "letter": "C",
+                "text": "OpenDJ"
+            },
+            {
+                "letter": "D",
+                "text": "ApacheDS"
+            }
+        ],
+        "correctAnswer": [
+            "B"
+        ]
+    },
+    {
+        "id": 147,
+        "text": "146. Which of the following is a problem with traditional VDI?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Poor software compatibility"
+            },
+            {
+                "letter": "B",
+                "text": "Poor video playback experience"
+            },
+            {
+                "letter": "C",
+                "text": "Inability to monitor user behavior"
+            },
+            {
+                "letter": "D",
+                "text": "High solidification investment cost"
+            }
+        ],
+        "correctAnswer": [
+            "D"
+        ]
+    },
+    {
+        "id": 148,
+        "text": "147. Which of the following terminal types support Workspace access? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "iOS"
+            },
+            {
+                "letter": "B",
+                "text": "Android"
+            },
+            {
+                "letter": "C",
+                "text": "Windows PC"
+            },
+            {
+                "letter": "D",
+                "text": "Windows Phone"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C"
+        ]
+    },
+    {
+        "id": 149,
+        "text": "148. What is the sound sampling frequency in the Workspace control protocol?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "22.05KHz"
+            },
+            {
+                "letter": "B",
+                "text": "48KHz"
+            },
+            {
+                "letter": "C",
+                "text": "44.1KHz"
+            },
+            {
+                "letter": "D",
+                "text": "33KHz"
+            }
+        ],
+        "correctAnswer": [
+            "C"
+        ]
+    },
+    {
+        "id": 150,
+        "text": "149. Workspace is only available through the network.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 151,
+        "text": "150. Which of the following devices is required for Workspace to support 3D applications?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "CPU supporting hardware virtualization"
+            },
+            {
+                "letter": "B",
+                "text": "GPU card"
+            },
+            {
+                "letter": "C",
+                "text": "Smart NIC"
+            },
+            {
+                "letter": "D",
+                "text": "SSD hard disk"
+            }
+        ],
+        "correctAnswer": [
+            "B"
+        ]
+    },
+    {
+        "id": 152,
+        "text": "151. Workspace tenant networks are isolated by VPC.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 153,
+        "text": "152. Which of the following security protection mechanisms does Workspace have? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Terminals are separated from data, and data is not deployed"
+            },
+            {
+                "letter": "B",
+                "text": "TLS encryption during data transmission"
+            },
+            {
+                "letter": "C",
+                "text": "VPC isolation and security isolation from other tenants"
+            },
+            {
+                "letter": "D",
+                "text": "Peripheral channels can be managed and controlled. Read-only redirection is supported. Data cannot be copied to peripheral storage"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ]
+    },
+    {
+        "id": 154,
+        "text": "153. Workspace supports user authentication through Microsoft Active Directory.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 155,
+        "text": "154. USB devices on local Workspace user terminals can be redirected to cloud desktops.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 156,
+        "text": "155. What types of peripheral redirection does Workspace support? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Printer redirection"
+            },
+            {
+                "letter": "B",
+                "text": "USB port redirection"
+            },
+            {
+                "letter": "C",
+                "text": "File redirection"
+            },
+            {
+                "letter": "D",
+                "text": "Clipboard redirection"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ]
+    },
+    {
+        "id": 157,
+        "text": "156. User data in Workspace is stored on the local client terminal device.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            "Incorrect (stored in the cloud)"
+        ]
+    },
+    {
+        "id": 158,
+        "text": "157. The Workspace data transfer process is encrypted using TLS.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 159,
+        "text": "158. What value does Workspace bring to customers?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Free"
+            },
+            {
+                "letter": "B",
+                "text": "Rapid acquisition"
+            },
+            {
+                "letter": "C",
+                "text": "Pay-as-you-go"
+            },
+            {
+                "letter": "D",
+                "text": "Simplified O&M"
+            }
+        ],
+        "correctAnswer": [
+            "B",
+            "C",
+            "D"
+        ]
+    },
+    {
+        "id": 160,
+        "text": "159. Which of the following methods can be used to directly access a container from a public network?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Elastic IP"
+            },
+            {
+                "letter": "B",
+                "text": "Elastic Load Balancing"
+            },
+            {
+                "letter": "C",
+                "text": "ECS"
+            },
+            {
+                "letter": "D",
+                "text": "Virtual Private Cloud"
+            }
+        ],
+        "correctAnswer": [
+            "A"
+        ]
+    },
+    {
+        "id": 161,
+        "text": "160. Containers and virtual machines have similar advantages in isolation and resource allocation, but they differ in function since containers virtualize operating systems rather than hardware, making them more portable and efficient.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 162,
+        "text": "161. Processes running in a Docker container are fully isolated from the system. Therefore, some malicious behaviors do not affect the host system.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 163,
+        "text": "162. The container image repository supports image uploads.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 164,
+        "text": "163. Once an application is created, the CPU, memory, and network usage of the container cannot be monitored.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            false
+        ]
+    },
+    {
+        "id": 165,
+        "text": "164. Which of the following commands is used to upload files from the Docker Client to the image repository?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Docker Tag"
+            },
+            {
+                "letter": "B",
+                "text": "Docker Push"
+            },
+            {
+                "letter": "C",
+                "text": "Docker Pull"
+            },
+            {
+                "letter": "D",
+                "text": "Docker Images"
+            }
+        ],
+        "correctAnswer": [
+            "B"
+        ]
+    },
+    {
+        "id": 166,
+        "text": "165. Which of the following commands is used to tag images?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Docker Tag"
+            },
+            {
+                "letter": "B",
+                "text": "Docker Push"
+            },
+            {
+                "letter": "C",
+                "text": "Docker Pull"
+            },
+            {
+                "letter": "D",
+                "text": "Docker Images"
+            }
+        ],
+        "correctAnswer": [
+            "A"
+        ]
+    },
+    {
+        "id": 167,
+        "text": "166. What container application management functions does CCE provide? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Continuous update"
+            },
+            {
+                "letter": "B",
+                "text": "Elastic scaling"
+            },
+            {
+                "letter": "C",
+                "text": "Application monitoring"
+            },
+            {
+                "letter": "D",
+                "text": "View events"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ]
+    },
+    {
+        "id": 168,
+        "text": "167. After creating an application, you can change the application by replacing the application image.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 169,
+        "text": "168. What is needed to allow created applications to be accessible from the outside?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "More than two cluster nodes"
+            },
+            {
+                "letter": "B",
+                "text": "Each node’s memory exceeds 2 GB"
+            },
+            {
+                "letter": "C",
+                "text": "Publish the application as a service when creating the application"
+            },
+            {
+                "letter": "D",
+                "text": "Bind an elastic load balancer"
+            }
+        ],
+        "correctAnswer": [
+            "C"
+        ]
+    },
+    {
+        "id": 170,
+        "text": "169. What is the procedure for using CCE?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "1. Create an application"
+            }
+        ],
+        "correctAnswer": []
+    },
+    {
+        "id": 171,
+        "text": "2. Upload an image",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": []
+    },
+    {
+        "id": 172,
+        "text": "3. Create a cluster",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "B",
+                "text": "1. Create a cluster"
+            }
+        ],
+        "correctAnswer": []
+    },
+    {
+        "id": 173,
+        "text": "2. Create an application",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": []
+    },
+    {
+        "id": 174,
+        "text": "3. Upload an image",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "C",
+                "text": "1. Create a cluster"
+            }
+        ],
+        "correctAnswer": []
+    },
+    {
+        "id": 175,
+        "text": "2. Upload an image",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": []
+    },
+    {
+        "id": 176,
+        "text": "3. Create an application",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "D",
+                "text": "1. Upload an image"
+            }
+        ],
+        "correctAnswer": []
+    },
+    {
+        "id": 177,
+        "text": "2. Create an application",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": []
+    },
+    {
+        "id": 178,
+        "text": "3. Create a cluster",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            "C"
+        ]
+    },
+    {
+        "id": 179,
+        "text": "170. Which of the following functions are supported by the OBS console? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Static website hosting"
+            },
+            {
+                "letter": "B",
+                "text": "Multi-version control"
+            },
+            {
+                "letter": "C",
+                "text": "Cross-domain resource sharing"
+            },
+            {
+                "letter": "D",
+                "text": "External stabbing mounting"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C"
+        ]
+    },
+    {
+        "id": 180,
+        "text": "171. Users can use OBS in the OBS console or OBS browser.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 181,
+        "text": "172. Which of the following statements are incorrect? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Create a folder named br..ra/1 in the OBS bucket"
+            },
+            {
+                "letter": "B",
+                "text": "The OSC console supports batch deletion of buckets"
+            },
+            {
+                "letter": "C",
+                "text": "The OSC console supports batch deletion of objects"
+            },
+            {
+                "letter": "D",
+                "text": "A user creates 101 buckets in the OSC console"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "D"
+        ]
+    },
+    {
+        "id": 182,
+        "text": "173. Which of the following functions are supported by the OBS browser? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Static website hosting"
+            },
+            {
+                "letter": "B",
+                "text": "Multi-version control"
+            },
+            {
+                "letter": "C",
+                "text": "Cross-domain resource sharing"
+            },
+            {
+                "letter": "D",
+                "text": "External stabbing mounting"
+            }
+        ],
+        "correctAnswer": [
+            "C",
+            "D"
+        ]
+    },
+    {
+        "id": 183,
+        "text": "174. Create an OBS bucket and enable versioning. Upload the aaa object three times, disable bucket multi-versioning, and upload the aaa object three times. What is the number of objects in the bucket displayed in the bucket’s basic information?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "3"
+            },
+            {
+                "letter": "B",
+                "text": "4"
+            },
+            {
+                "letter": "C",
+                "text": "5"
+            },
+            {
+                "letter": "D",
+                "text": "6"
+            }
+        ],
+        "correctAnswer": [
+            "B"
+        ]
+    },
+    {
+        "id": 184,
+        "text": "175. A policy has been configured for OBS bucket A so that no user can access the bucket’s objects. If object B exists in bucket A and object B is configured with ACL permission to allow anonymous user access, users can access object B in anonymous access mode.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            false
+        ]
+    },
+    {
+        "id": 185,
+        "text": "176. To enable the log management function for an OBS bucket, which of the following permissions must the log delivery user group have in the target OBS bucket?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Read permission"
+            },
+            {
+                "letter": "B",
+                "text": "Write permission"
+            },
+            {
+                "letter": "C",
+                "text": "View ACL permissions"
+            },
+            {
+                "letter": "D",
+                "text": "Modify ACL permissions"
+            }
+        ],
+        "correctAnswer": [
+            "B",
+            "C"
+        ]
+    },
+    {
+        "id": 186,
+        "text": "177. Which of the following methods can be used to set access permissions for anonymous users of OBS objects? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Configuring an OBS bucket ACL"
+            },
+            {
+                "letter": "B",
+                "text": "Configuring an OBS object ACL"
+            },
+            {
+                "letter": "C",
+                "text": "Configuring policies for OBS objects"
+            },
+            {
+                "letter": "D",
+                "text": "Configuring policies for OBS buckets"
+            }
+        ],
+        "correctAnswer": [
+            "B",
+            "D"
+        ]
+    },
+    {
+        "id": 187,
+        "text": "178. Which of the following scenarios are applicable to object storage? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Massive storage resource pool"
+            },
+            {
+                "letter": "B",
+                "text": "Static website hosting"
+            },
+            {
+                "letter": "C",
+                "text": "Big data storage"
+            },
+            {
+                "letter": "D",
+                "text": "Backup"
+            },
+            {
+                "letter": "E",
+                "text": "Archiving"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C",
+            "D",
+            "E"
+        ]
+    },
+    {
+        "id": 188,
+        "text": "179. When creating a monitoring dashboard, how many monitoring indicators can be added to a view at most?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "3"
+            },
+            {
+                "letter": "B",
+                "text": "5"
+            },
+            {
+                "letter": "C",
+                "text": "7"
+            },
+            {
+                "letter": "D",
+                "text": "9"
+            }
+        ],
+        "correctAnswer": [
+            "B"
+        ]
+    },
+    {
+        "id": 189,
+        "text": "180. The retention time of aggregated data varies depending on the aggregation period. How many days are indicator data retained for a 1-hour aggregation period?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "10"
+            },
+            {
+                "letter": "B",
+                "text": "20"
+            },
+            {
+                "letter": "C",
+                "text": "155"
+            },
+            {
+                "letter": "D",
+                "text": "300"
+            }
+        ],
+        "correctAnswer": [
+            "C"
+        ]
+    },
+    {
+        "id": 190,
+        "text": "181. Cloud Eye is a multidimensional monitoring platform for resources such as ECS and bandwidth. It allows real-time monitoring of alarms, notifications, and custom reports, enabling users to accurately understand the status of product resources.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 191,
+        "text": "182. Alarm notification refers to the triggering behavior of an alarm state. Users can enable or disable notifications when creating or modifying an alarm.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 192,
+        "text": "183. What are the alarm states of Cloud Eye? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Alarms"
+            },
+            {
+                "letter": "B",
+                "text": "Normal"
+            },
+            {
+                "letter": "C",
+                "text": "Insufficient data"
+            },
+            {
+                "letter": "D",
+                "text": "Closed"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C"
+        ]
+    },
+    {
+        "id": 193,
+        "text": "184. What service resource metrics can be monitored in Cloud Eye? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Virtual Private Cloud"
+            },
+            {
+                "letter": "B",
+                "text": "Elastic Computing Service"
+            },
+            {
+                "letter": "C",
+                "text": "Distributed Cache Service"
+            },
+            {
+                "letter": "D",
+                "text": "Elastic Load Balancing"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C",
+            "D"
+        ]
+    },
+    {
+        "id": 194,
+        "text": "185. When the state of an alarm rule remains unchanged, the system sends an alarm notification only when the alarm rule state is displayed for the first time.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 195,
+        "text": "186. What are the alarm notification modes? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Email"
+            },
+            {
+                "letter": "B",
+                "text": "SMS notification"
+            },
+            {
+                "letter": "C",
+                "text": "HTTP POST"
+            },
+            {
+                "letter": "D",
+                "text": "HTTPS POST"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C"
+        ]
+    },
+    {
+        "id": 196,
+        "text": "187. Which of the following aggregation modes are supported by Cloud Eye instance monitoring? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Maximum"
+            },
+            {
+                "letter": "B",
+                "text": "Variance value"
+            },
+            {
+                "letter": "C",
+                "text": "Standard deviation"
+            },
+            {
+                "letter": "D",
+                "text": "Average"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "D"
+        ]
+    },
+    {
+        "id": 197,
+        "text": "188. The alarm threshold consists of the aggregation mode (raw data, maximum value, minimum value, average value, and variance value), judgment condition (>, <=, <, <=, =), and critical value to configure alarm conditions.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 198,
+        "text": "189. Users can add or remove key instance monitoring graphs on the Cloud Eye Overview homepage. Key instance monitoring graphs can compare multiple indicators so users can view monitoring graphs each time they log in to Cloud Eye.",
+        "type": "true_false",
+        "options": [],
+        "correctAnswer": [
+            true
+        ]
+    },
+    {
+        "id": 199,
+        "text": "190. What is the return value when custom monitoring metrics are successfully uploaded via the open API?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "200"
+            },
+            {
+                "letter": "B",
+                "text": "201"
+            },
+            {
+                "letter": "C",
+                "text": "202"
+            },
+            {
+                "letter": "D",
+                "text": "203"
+            }
+        ],
+        "correctAnswer": [
+            "B"
+        ]
+    },
+    {
+        "id": 200,
+        "text": "191. To query the historical alarm service for the last seven days, which service must be enabled?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Cloud Trace Service"
+            },
+            {
+                "letter": "B",
+                "text": "Message Notification Service"
+            },
+            {
+                "letter": "C",
+                "text": "Elastic Cloud Host Service"
+            },
+            {
+                "letter": "D",
+                "text": "Relational Database Service"
+            }
+        ],
+        "correctAnswer": [
+            "B"
+        ]
+    },
+    {
+        "id": 201,
+        "text": "192. Which of the following scenarios is not an application scenario for Cloud Eye?",
+        "type": "single_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Routine resource management"
+            },
+            {
+                "letter": "B",
+                "text": "Issue notification"
+            },
+            {
+                "letter": "C",
+                "text": "Capacity adjustment"
+            },
+            {
+                "letter": "D",
+                "text": "Operation audit"
+            }
+        ],
+        "correctAnswer": [
+            "D"
+        ]
+    },
+    {
+        "id": 202,
+        "text": "193. What types of VPNs can be classified based on service usage? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "Access VPN"
+            },
+            {
+                "letter": "B",
+                "text": "Intranet VPN"
+            },
+            {
+                "letter": "C",
+                "text": "Extranet VPN"
+            },
+            {
+                "letter": "D",
+                "text": "Layer 2 and Layer 3 tunnel VPN"
+            }
+        ],
+        "correctAnswer": [
+            "A",
+            "B",
+            "C"
+        ]
+    },
+    {
+        "id": 203,
+        "text": "194. The IPSec framework contains several protocols. Which are the most important protocols? (Multiple options)",
+        "type": "multiple_choice",
+        "options": [
+            {
+                "letter": "A",
+                "text": "IP address"
+            },
+            {
+                "letter": "B",
+                "text": "IKE"
+            },
+            {
+                "letter": "C",
+                "text": "AH"
+            },
+            {
+                "letter": "D",
+                "text": "ESP"
+            }
+        ],
+        "correctAnswer": [
+            "B",
+            "C",
+            "D"
+        ]
+    }
+];
+
+        let state = {
+            currentQuestion: 0,
+            userAnswers: {},
+            showResults: false,
+            timeRemaining: 90 * 60, // 90 minutes for HCIA exam
+            examStarted: false,
+            timerId: null
+        };
+
+        const app = document.getElementById('app');
+
+        // Function to check if an answer is correct
+        function isAnswerCorrect(questionId) {
+            const question = examQuestions.find(q => q.id === questionId);
+            const userAnswer = state.userAnswers[questionId];
+            
+            if (userAnswer === undefined) return null; // No answer provided
+            
+            if (question.type === 'true_false') {
+                const correctAnswerBool = question.correctAnswer[0];
+                return (userAnswer === 'true' && correctAnswerBool === true) || 
+                       (userAnswer === 'false' && correctAnswerBool === false);
+            } else if (question.type === 'single_choice') {
+                return userAnswer === question.correctAnswer[0];
+            } else if (question.type === 'multiple_choice') {
+                const userSet = new Set(userAnswer || []);
+                const correctSet = new Set(question.correctAnswer);
+                return userSet.size === correctSet.size && [...userSet].every(x => correctSet.has(x));
+            }
+            
+            return false;
+        }
+
+        function render() {
+            if (!state.examStarted) {
+                app.innerHTML = renderStartScreen();
+            } else if (state.showResults) {
+                app.innerHTML = renderResultsScreen();
+            } else {
+                app.innerHTML = renderExamScreen();
+            }
+            addEventListeners();
+        }
+
+        function addEventListeners() {
+            if (!state.examStarted) {
+                document.getElementById('start-exam-btn').addEventListener('click', startExam);
+            } else if (state.showResults) {
+                document.getElementById('restart-exam-btn').addEventListener('click', restartExam);
+            } else {
+                document.getElementById('prev-btn')?.addEventListener('click', () => navigateQuestion(-1));
+                document.getElementById('next-btn')?.addEventListener('click', () => navigateQuestion(1));
+                document.getElementById('finish-btn')?.addEventListener('click', finishExam);
+
+                document.querySelectorAll('.answer-option').forEach(btn => {
+                    btn.addEventListener('click', (e) => handleAnswer(e.currentTarget.dataset.questionId, e.currentTarget.dataset.answer));
+                });
+                document.querySelectorAll('.progress-dot').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        state.currentQuestion = parseInt(e.currentTarget.dataset.index);
+                        render();
+                    });
+                });
+            }
+        }
+        
+        const huaweiLogoSvg = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Crect width='200' height='60' fill='%23c41e3a'/%3E%3Ctext x='100' y='35' text-anchor='middle' fill='white' font-family='Arial' font-size='18' font-weight='bold'%3EHUAWEI%3C/text%3E%3C/svg%3E";
+
+        function renderStartScreen() {
+            return `
+                <div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                    <div class="max-w-4xl mx-auto">
+                        <div class="bg-white rounded-lg shadow-lg p-8 text-center">
+                            <div class="mb-8">
+                                <img src="${huaweiLogoSvg}" alt="Huawei Logo" class="mx-auto mb-4 w-32" />
+                                <h1 class="text-3xl font-bold text-gray-800 mb-2">HCIA Cloud Service V3.5</h1>
+                                <h2 class="text-xl text-gray-600">Exam Simulator</h2>
+                            </div>
+                            
+                            <div class="bg-gray-50 rounded-lg p-6 mb-8">
+                                <h3 class="text-lg font-semibold mb-4">Exam Information</h3>
+                                <div class="grid grid-cols-2 gap-4 text-sm">
+                                    <div><span class="font-medium">Total Questions:</span> ${examQuestions.length}</div>
+                                    <div><span class="font-medium">Time Limit:</span> 90 minutes</div>
+                                    <div><span class="font-medium">Passing Score:</span> 60%</div>
+                                    <div><span class="font-medium">Question Types:</span> T/F, Single, Multiple Choice</div>
+                                </div>
+                            </div>
+
+                            <div class="mb-8">
+                                <h3 class="text-lg font-semibold mb-4">Instructions</h3>
+                                <ul class="text-left text-sm text-gray-600 space-y-2">
+                                    <li>• Read each question carefully</li>
+                                    <li>• For multiple choice questions, select all correct answers</li>
+                                    <li>• You can navigate between questions freely</li>
+                                    <li>• Time is displayed at the top</li>
+                                    <li>• Green numbers indicate correct answers, red indicate incorrect</li>
+                                    <li>• Click "Finish Exam" when you are done</li>
+                                </ul>
+                            </div>
+
+                            <button id="start-exam-btn" class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-lg transition-colors">
+                                Start Exam
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        function renderResultsScreen() {
+            const results = calculateResults();
+            const reviewHtml = examQuestions.map((question, index) => {
+                const userAnswer = state.userAnswers[question.id];
+                let isCorrect = false;
+
+                if (userAnswer !== undefined) {
+                    if (question.type === 'true_false') {
+                        const correctAnswerBool = question.correctAnswer[0];
+                        if ((userAnswer === 'true' && correctAnswerBool === true) || (userAnswer === 'false' && correctAnswerBool === false)) {
+                            isCorrect = true;
+                        }
+                    } else if (question.type === 'single_choice') {
+                        isCorrect = userAnswer === question.correctAnswer[0];
+                    } else if (question.type === 'multiple_choice') {
+                        const userSet = new Set(userAnswer || []);
+                        const correctSet = new Set(question.correctAnswer);
+                        isCorrect = userSet.size === correctSet.size && [...userSet].every(x => correctSet.has(x));
+                    }
+                }
+
+                return `
+                    <div class="p-4 rounded-lg border-l-4 ${isCorrect ? 'border-green-500 bg-green-50' : 'border-red-500 bg-red-50'}">
+                        <div class="flex items-start justify-between">
+                            <div class="flex-1">
+                                <div class="font-medium text-sm">Question ${index + 1}: ${question.text.slice(0, 100)}...</div>
+                                <div class="text-sm text-gray-600 mt-1">
+                                    <span class="font-medium">Your Answer:</span> 
+                                    ${question.type === 'true_false' ? (userAnswer === undefined ? 'No answer' : (userAnswer === 'true' ? 'True' : 'False')) :
+                                    question.type === 'multiple_choice' ? (userAnswer && userAnswer.length > 0 ? userAnswer.join(', ') : 'No answer') :
+                                    (userAnswer || 'No answer')}
+                                </div>
+                                <div class="text-sm text-gray-600">
+                                    <span class="font-medium">Correct Answer:</span> 
+                                    ${question.type === 'true_false' ? (question.correctAnswer[0] ? 'True' : 'False') : question.correctAnswer.join(', ')}
+                                </div>
+                            </div>
+                            <div class="ml-4 ${isCorrect ? 'text-green-500' : 'text-red-500'}">
+                                ${isCorrect ? checkCircleIcon(20) : xCircleIcon(20)}
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            return `
+                <div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                    <div class="max-w-4xl mx-auto">
+                        <div class="bg-white rounded-lg shadow-lg p-8">
+                            <div class="text-center mb-8">
+                                <h1 class="text-3xl font-bold text-gray-800 mb-4">Exam Results</h1>
+                                <div class="inline-flex items-center justify-center w-24 h-24 rounded-full text-white text-2xl font-bold mb-4 ${results.passed ? 'bg-green-500' : 'bg-red-500'}">
+                                    ${results.passed ? checkCircleIcon(48) : xCircleIcon(48)}
+                                </div>
+                                <div class="text-6xl font-bold mb-2">${results.percentage}%</div>
+                                <div class="text-xl font-semibold ${results.passed ? 'text-green-600' : 'text-red-600'}">
+                                    ${results.passed ? 'PASSED!' : 'FAILED'}
+                                </div>
+                                <div class="text-gray-600 mt-2">${results.correct} out of ${results.total} correct answers</div>
+                            </div>
+                            <div class="mb-8">
+                                <h3 class="text-lg font-semibold mb-4">Answer Review</h3>
+                                <div class="max-h-96 overflow-y-auto space-y-4">${reviewHtml}</div>
+                            </div>
+                            <div class="text-center">
+                                <button id="restart-exam-btn" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 rounded-lg transition-colors inline-flex items-center gap-2">
+                                    ${rotateCcwIcon(20)} Restart Exam
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderExamScreen() {
+            const question = examQuestions[state.currentQuestion];
+            const userAnswer = state.userAnswers[question.id];
+            
+            const questionTypeBadge = {
+                'true_false': '<span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">True/False</span>',
+                'single_choice': '<span class="px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">Single Choice</span>',
+                'multiple_choice': '<span class="px-3 py-1 rounded-full text-xs font-medium bg-purple-100 text-purple-800">Multiple Choice</span>'
+            };
+
+            let optionsHtml = '';
+            if (question.type === 'true_false') {
+                optionsHtml = `
+                    <div class="space-y-3">
+                        <button data-question-id="${question.id}" data-answer="true" class="answer-option w-full p-4 text-left rounded-lg border-2 transition-colors ${userAnswer === 'true' ? 'border-green-500 bg-green-50 text-green-800' : 'border-gray-200 hover:border-gray-300'}">
+                            <div class="flex items-center gap-3">
+                                <div class="w-4 h-4 rounded-full border-2 ${userAnswer === 'true' ? 'border-green-500 bg-green-500' : 'border-gray-300'}">${userAnswer === 'true' ? '<div class="w-2 h-2 bg-white rounded-full mx-auto mt-0.5"></div>' : ''}</div>
+                                <span class="font-medium">True</span>
+                            </div>
+                        </button>
+                        <button data-question-id="${question.id}" data-answer="false" class="answer-option w-full p-4 text-left rounded-lg border-2 transition-colors ${userAnswer === 'false' ? 'border-green-500 bg-green-50 text-green-800' : 'border-gray-200 hover:border-gray-300'}">
+                            <div class="flex items-center gap-3">
+                                <div class="w-4 h-4 rounded-full border-2 ${userAnswer === 'false' ? 'border-green-500 bg-green-500' : 'border-gray-300'}">${userAnswer === 'false' ? '<div class="w-2 h-2 bg-white rounded-full mx-auto mt-0.5"></div>' : ''}</div>
+                                <span class="font-medium">False</span>
+                            </div>
+                        </button>
+                    </div>
+                `;
+            } else {
+                optionsHtml = question.options.map(option => {
+                    const isSelected = question.type === 'multiple_choice' ? (userAnswer || []).includes(option.letter) : userAnswer === option.letter;
+                    return `
+                        <button data-question-id="${question.id}" data-answer="${option.letter}" class="answer-option w-full p-4 text-left rounded-lg border-2 transition-colors ${isSelected ? 'border-blue-500 bg-blue-50 text-blue-800' : 'border-gray-200 hover:border-gray-300'}">
+                            <div class="flex items-center gap-3">
+                                <div class="w-4 h-4 border-2 ${question.type === 'multiple_choice' ? 'rounded' : 'rounded-full'} ${isSelected ? 'border-blue-500 bg-blue-500' : 'border-gray-300'}">
+                                    ${isSelected ? `<div class="w-2 h-2 bg-white mx-auto mt-0.5 ${question.type === 'multiple_choice' ? 'rounded-sm' : 'rounded-full'}"></div>` : ''}
+                                </div>
+                                <span class="font-medium text-gray-700">${option.letter}.</span>
+                                <span>${option.text}</span>
+                            </div>
+                        </button>
+                    `;
+                }).join('');
+            }
+            
+            const progressMapHtml = examQuestions.map((q, index) => {
+                const isAnswered = state.userAnswers[q.id] !== undefined;
+                const isCorrect = isAnswerCorrect(q.id);
+                
+                let bgColor, textColor, borderColor;
+                
+                if (index === state.currentQuestion) {
+                    // Current question - blue
+                    bgColor = 'bg-blue-500';
+                    textColor = 'text-white';
+                    borderColor = 'border-blue-500';
+                } else if (isAnswered) {
+                    if (isCorrect === true) {
+                        // Correct answer - green
+                        bgColor = 'bg-green-500';
+                        textColor = 'text-white';
+                        borderColor = 'border-green-500';
+                    } else if (isCorrect === false) {
+                        // Incorrect answer - red
+                        bgColor = 'bg-red-500';
+                        textColor = 'text-white';
+                        borderColor = 'border-red-500';
+                    }
+                } else {
+                    // Not answered - gray
+                    bgColor = 'bg-white';
+                    textColor = 'text-gray-600';
+                    borderColor = 'border-gray-300';
+                }
+                
+                return `
+                    <button data-index="${index}" class="progress-dot w-full h-8 text-xs rounded border-2 transition-colors hover:opacity-80 ${borderColor} ${bgColor} ${textColor}">
+                        ${index + 1}
+                    </button>
+                `;
+            }).join('');
+
+            return `
+                <div class="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+                    <div class="max-w-4xl mx-auto">
+                        <div class="bg-white rounded-lg shadow-lg p-4 mb-6 sticky top-0 z-10">
+                            <div class="flex justify-between items-center">
+                                <div class="flex items-center gap-4">
+                                    <img src="${huaweiLogoSvg}" alt="Huawei Logo" class="w-20" />
+                                    <h1 class="text-xl font-bold text-gray-800">HCIA Cloud Service V3.5</h1>
+                                </div>
+                                <div class="flex items-center gap-4">
+                                    <div class="flex items-center gap-2">
+                                        ${clockIcon(20, 'text-red-600')}
+                                        <span class="text-lg font-mono">${formatTime(state.timeRemaining)}</span>
+                                    </div>
+                                    <div class="text-sm text-gray-600">Question ${state.currentQuestion + 1} of ${examQuestions.length}</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white rounded-lg shadow-lg p-6 mb-6">
+                            <div class="mb-4">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-sm font-medium text-gray-500">Question ${state.currentQuestion + 1}</span>
+                                    ${questionTypeBadge[question.type]}
+                                </div>
+                                <h2 class="text-lg font-medium text-gray-800 leading-relaxed">${question.text}</h2>
+                            </div>
+                            <div class="space-y-3">${optionsHtml}</div>
+                        </div>
+
+                        <div class="flex justify-between items-center mb-6">
+                            <button id="prev-btn" ${state.currentQuestion === 0 ? 'disabled' : ''} class="flex items-center gap-2 px-4 py-2 bg-gray-600 text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-700 transition-colors">
+                                ${chevronLeftIcon(20)} Previous
+                            </button>
+                            <span class="text-sm text-gray-600">${Object.keys(state.userAnswers).length} out of ${examQuestions.length} answered</span>
+                            <div class="flex gap-2">
+                                ${state.currentQuestion === examQuestions.length - 1 ?
+                                    `<button id="finish-btn" class="px-6 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors font-medium">Finish Exam</button>` :
+                                    `<button id="next-btn" class="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors">Next ${chevronRightIcon(20)}</button>`
+                                }
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 bg-white rounded-lg shadow-lg p-4">
+                            <h3 class="text-sm font-medium text-gray-700 mb-3">Exam Progress</h3>
+                            <div class="mb-3 text-xs text-gray-600">
+                                <span class="inline-flex items-center gap-1 mr-4">
+                                    <div class="w-3 h-3 bg-blue-500 rounded"></div>
+                                    Current
+                                </span>
+                                <span class="inline-flex items-center gap-1 mr-4">
+                                    <div class="w-3 h-3 bg-green-500 rounded"></div>
+                                    Correct
+                                </span>
+                                <span class="inline-flex items-center gap-1 mr-4">
+                                    <div class="w-3 h-3 bg-red-500 rounded"></div>
+                                    Incorrect
+                                </span>
+                                <span class="inline-flex items-center gap-1">
+                                    <div class="w-3 h-3 bg-gray-300 rounded border"></div>
+                                    Unanswered
+                                </span>
+                            </div>
+                            <div class="grid grid-cols-10 md:grid-cols-15 gap-2">${progressMapHtml}</div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // --- State Management and Logic ---
+
+        function startExam() {
+            state.examStarted = true;
+            state.timerId = setInterval(() => {
+                state.timeRemaining--;
+                if (state.timeRemaining <= 0) {
+                    finishExam();
+                }
+                const timerEl = document.querySelector('.font-mono');
+                if(timerEl) timerEl.textContent = formatTime(state.timeRemaining);
+
+            }, 1000);
+            render();
+        }
+
+        function finishExam() {
+            clearInterval(state.timerId);
+            state.showResults = true;
+            render();
+        }
+
+        function restartExam() {
+            clearInterval(state.timerId);
+            state = {
+                currentQuestion: 0,
+                userAnswers: {},
+                showResults: false,
+                timeRemaining: 90 * 60,
+                examStarted: false,
+                timerId: null
+            };
+            render();
+        }
+
+        function navigateQuestion(direction) {
+            const newIndex = state.currentQuestion + direction;
+            if (newIndex >= 0 && newIndex < examQuestions.length) {
+                state.currentQuestion = newIndex;
+                render();
+            }
+        }
+        
+        function handleAnswer(questionId, answer) {
+            const question = examQuestions.find(q => q.id == questionId);
+            let newAnswer;
+
+            if (question.type === 'multiple_choice') {
+                const currentAnswers = state.userAnswers[questionId] || [];
+                if (currentAnswers.includes(answer)) {
+                    newAnswer = currentAnswers.filter(a => a !== answer);
+                } else {
+                    newAnswer = [...currentAnswers, answer];
+                }
+            } else {
+                 newAnswer = answer; 
+            }
+
+            state.userAnswers[questionId] = newAnswer;
+            render();
+        }
+
+        function calculateResults() {
+            let correct = 0;
+            examQuestions.forEach(question => {
+                const userAnswer = state.userAnswers[question.id];
+                if (userAnswer === undefined) return;
+
+                if (question.type === 'true_false') {
+                    const correctAnswerBool = question.correctAnswer[0];
+                    if ((userAnswer === 'true' && correctAnswerBool === true) || (userAnswer === 'false' && correctAnswerBool === false)) {
+                        correct++;
+                    }
+                } else if (question.type === 'single_choice') {
+                    if (userAnswer === question.correctAnswer[0]) {
+                        correct++;
+                    }
+                } else if (question.type === 'multiple_choice') {
+                    const userSet = new Set(userAnswer || []);
+                    const correctSet = new Set(question.correctAnswer);
+                    if (userSet.size === correctSet.size && [...userSet].every(x => correctSet.has(x))) {
+                        correct++;
+                    }
+                }
+            });
+            const percentage = Math.round((correct / examQuestions.length) * 100);
+            return {
+                correct,
+                total: examQuestions.length,
+                percentage,
+                passed: percentage >= 60
+            };
+        }
+
+        function formatTime(seconds) {
+            const hours = Math.floor(seconds / 3600);
+            const minutes = Math.floor((seconds % 3600) / 60);
+            const secs = seconds % 60;
+            return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+        }
+        
+        // --- Icon Functions ---
+        function checkCircleIcon(size) { return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>`; }
+        function xCircleIcon(size) { return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>`; }
+        function rotateCcwIcon(size) { return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v6h6"/><path d="M3 13a9 9 0 1 0 3-7.7L3 8"/></svg>`; }
+        function clockIcon(size, className = '') { return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="${className}"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>`; }
+        function chevronLeftIcon(size) { return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>`; }
+        function chevronRightIcon(size) { return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>`; }
+
+        // Initial Render
+        render();
+
+    </script>
+</body>
+</html>
